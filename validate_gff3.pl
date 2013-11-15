@@ -172,7 +172,7 @@ my $validator = GFF3::Validator->new(-config         => $config,
                                      -log_file       => $log_file,
                                      -report_file    => $report_file,
                                      -ontology_files => \@ontology_files,
-                                     -table_id       => "", # Currently do not use table id feature within the command-line version
+                                     # -table_id       => "", # Currently do not use table id feature within the command-line version
                                      );
 
 # Create/Reset tables to store the data
