@@ -774,6 +774,7 @@ sub create_tables  {
         );
 
     foreach my $create_statement (@create_statements) {
+        warn sprintf ">>>SQL\n%s\n<<<SQL\n", $create_statement;
         $dbh->do($create_statement);
         }
 
