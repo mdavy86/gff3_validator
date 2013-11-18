@@ -303,7 +303,7 @@ sub table_id {
         }
 
     if (!defined $self->{table_id}) {
-        my ($temp_fh, $temp_file) = File::Temp::tempfile("XXXX",
+        my ($temp_fh, $temp_file) = File::Temp::tempfile("gff3_validator_XXXX",
                                                          DIR     => $temp_dir,
                                                          SUFFIX  => '.table_lock',
                                                          );
