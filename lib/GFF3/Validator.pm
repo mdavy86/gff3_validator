@@ -107,9 +107,8 @@ sub new {
     my %obj = {};
     my $self = bless \%obj, $class;
 
-    # First read config file, parse and store it
-    my $config = $params{-config} or croak("A config must be specified!");
-    my $config_obj = Config::General->new(-ConfigFile => $config, -CComments => 0);
+    # Parse config object from $params{-config}
+    my $config_obj = $params{-config} or croak("A config must be specified!");
     my %config = $config_obj->getall;
     $self->{config} = \%config;
 

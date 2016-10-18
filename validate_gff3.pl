@@ -133,6 +133,9 @@ croak("Unrecognized database type ($db_type)!") unless $db_type =~ /^(mysql|sqli
 $db_dir ||= $config{temp_dir};
 croak("Cannot determine db dir!") unless $db_dir;
 
+## Update temp_dir in config
+$config_obj->{'config'}->{'temp_dir'} = $db_dir;
+
 my $datasource;
 if ($dbname && $db_type eq 'mysql') {
     $datasource = "DBI:mysql:dbname=$dbname";
@@ -148,7 +151,6 @@ elsif (!$dbname && $db_type eq 'sqlite') {
                                                              DIR     => $db_dir,
                                                              SUFFIX  => '.db',
                                                              UNLINK  => 1);
-
     $datasource = "DBI:SQLite:dbname=$temp_file";
     }
 else {
@@ -156,12 +158,13 @@ else {
     }    
 croak("Cannot determine database name!") unless $datasource;
 
+
 # Prepare params
 my $log_file = "$out.log";
 my $report_file = "$out.report";
 
 # Create validator object
-my $validator = GFF3::Validator->new(-config         => $config,
+my $validator = GFF3::Validator->new(-config         => $config_obj,
                                      -gff3_file      => $gff3_file,
                                      -datasource     => $datasource,
                                      -username       => $username,
