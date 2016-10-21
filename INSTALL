@@ -1,0 +1,20 @@
+Perlbrew
+========
+
+
+Installing perl module dependencies using [Perlbrew](https://perlbrew.pl).
+
+```bash
+## Select perl version
+perlbrew use perl-5.24.0
+
+## Create local::lib environment
+perlbrew lib create gff
+
+## Switch to environment
+perlbrew use perl-5.24.0@gff
+
+cpanm --installdeps .
+```
+
+You should now have all the dependencies to run `validate_gff3.pl`.
