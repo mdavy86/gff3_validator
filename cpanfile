@@ -5,4 +5,11 @@ requires 'Config::General';
 requires 'Digest::SHA1';
 requires 'LWP';
 requires 'FindBin::Real';
-requires 'DBD::SQLite';
+
+feature mysql => 'use MySQL/MariaDB databases' => sub {
+    requires 'DBD::mysql';
+};
+
+feature sqlite => 'use SQLite databases' => sub {
+    requires 'DBD::SQLite';
+};
