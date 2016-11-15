@@ -19,6 +19,9 @@ cpanm --installdeps .
 ## choose your database engine
 cpanm --installdeps --with-feature=mysql .
 cpanm --installdeps --with-feature=sqlite .
+
+## add dependencies for the online version if that is use case
+cpanm --installdeps --with-feature=online .
 ```
 
 You should now have all the dependencies to run `validate_gff3.pl`.

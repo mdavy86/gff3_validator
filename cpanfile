@@ -13,3 +13,9 @@ feature mysql => 'use MySQL/MariaDB databases' => sub {
 feature sqlite => 'use SQLite databases' => sub {
     requires 'DBD::SQLite';
 };
+
+feature online => 'the online version' => sub {
+    requires 'CGI';
+    requires 'Tie::IxHash';
+    requires 'CGI::Session';
+};
