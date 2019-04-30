@@ -1,3 +1,5 @@
+# -*- mode: perl; -*-
+
 requires 'Config::General';
 requires 'DBI';
 requires 'Digest::SHA1';
@@ -19,5 +21,6 @@ feature online => 'the online version' => sub {
 
 requires 'GO::Parser';
 requires 'LWP';
+requires 'LWP::Protocol::https';
 requires 'Time::Format';
 

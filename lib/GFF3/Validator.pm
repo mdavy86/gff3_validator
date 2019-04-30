@@ -1700,7 +1700,7 @@ sub _retrieve_file {
 
     my $retrieved_file;
 
-    if ($file =~ /^http:/ or
+    if ($file =~ /^https?:/ or
         $file =~ /^ftp:/  or
         $file =~ /^file:/    ) {
 
