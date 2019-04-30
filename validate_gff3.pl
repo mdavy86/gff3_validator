@@ -150,7 +150,7 @@ elsif (!$dbname && $db_type eq 'sqlite') {
     my ($temp_fh, $temp_file) = File::Temp::tempfile("validate_gff3_sqlite_XXXXX",
                                                              DIR     => $db_dir,
                                                              SUFFIX  => '.db',
-                                                             UNLINK  => 1);
+                                                             UNLINK  => 0);
     $datasource = "DBI:SQLite:dbname=$temp_file";
     }
 else {

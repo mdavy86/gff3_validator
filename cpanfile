@@ -1,9 +1,6 @@
-requires 'DBI';
-requires 'GO::Parser';
-requires 'Time::Format';
 requires 'Config::General';
+requires 'DBI';
 requires 'Digest::SHA1';
-requires 'LWP';
 requires 'FindBin::Real';
 
 feature mysql => 'use MySQL/MariaDB databases' => sub {
@@ -19,3 +16,8 @@ feature online => 'the online version' => sub {
     requires 'Tie::IxHash';
     requires 'CGI::Session';
 };
+
+requires 'GO::Parser';
+requires 'LWP';
+requires 'Time::Format';
+
